@@ -1,0 +1,82 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+main {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin: 4em auto;
+    font-size: 0.8em;
+}
+
+a {
+    color: #1f1f1f;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 1em auto;
+}
+
+form > div {
+    padding: 0.5em;
+}
+
+#currency_past {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#currency_past label {
+    min-width: 2.5em;
+}
+
+#or {
+    width: 32px;
+    line-height: 59px;
+    vertical-align: middle;
+}
+
+.past_div {
+    padding: 1em;
+}
+
+#euro_past_div {
+    text-align: right;
+}
+
+#schilling_past_div {
+    text-align: left;
+}
+
+#euro_present {
+    font-weight: bold;
+}
+
+#inflation_present {
+    font-size: 0.8em;
+}
+
+#present {
+    padding-top: 0;
+    margin-top: 1.5em;
+}
+
+#has_like_text {
+    padding-bottom: 0;
+}

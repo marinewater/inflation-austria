@@ -1,0 +1,26 @@
+{
+  "name": "inflation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --ui bdd --recursive ./test"
+  },
+  "author": "marinewater",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.0.6",
+    "@types/cheerio": "^0.22.5",
+    "@types/mocha": "^2.2.44",
+    "@types/request": "^2.0.8",
+    "@types/sinon": "^4.0.0",
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "mocha": "^4.0.1",
+    "request": "^2.83.0",
+    "rollup": "^0.51.8",
+    "sinon": "^4.1.2",
+    "typescript": "^2.6.1",
+    "uglify-js": "^3.1.10"
+  }
+}

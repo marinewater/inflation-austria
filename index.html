@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <title>Inflationsrechner Österreich</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<main>
+    <h1>Inflationsrechner Österreich</h1>
+    <form action="">
+
+        <div id="currency_past">
+            <div id="euro_past_div" class="past_div">
+                <label for="euro_past">€</label>
+                <input type="number" value="100" step="0.01" placeholder="100" id="euro_past">
+            </div>
+            <div id="or">
+                oder
+            </div>
+            <div id="schilling_past_div" class="past_div">
+                <label for="schilling_past">ATS</label>
+                <input type="number" value="1376.03" step="0.01" placeholder="100" id="schilling_past">
+            </div>
+        </div>
+
+        <div>
+            <span>im</span>
+            <select name="month" id="month_from" class="month">
+            </select>
+            <select name="year" id="year_from">
+            </select>
+        </div>
+
+        <div id="has_like_text">
+            <p>haben die selbe Kaufkraft wie</p>
+        </div>
+
+        <div id="present">
+            <p id="euro_present"></p>
+            <p id="inflation_present"></p>
+        </div>
+
+        <div>
+            <span>im</span>
+            <select name="month_to" id="month_to" class="month">
+            </select>
+            <select name="year_to" id="year_to">
+            </select>
+        </div>
+
+    </form>
+</main>
+
+<footer>
+    <p><a href="https://statistik.at/web_de/statistiken/wirtschaft/preise/verbraucherpreisindex_vpi_hvpi/zeitreihen_und_verkettungen/022815.html">Quelle Inflation: statistik.at</a></p>
+</footer>
+
+    <script src="assets/bundle.js"></script>
+</body>
+</html>
