@@ -1,11 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var inflation_1 = require("./inflation");
-var removeChildren_1 = require("./removeChildren");
+import { inflation_data, update_inflation } from './inflation';
+import { remove_children } from './removeChildren';
 /**
  * adds selectable year options to all year select elements
  */
-function add_years() {
+export function add_years() {
     var year_from_select = document.getElementById('year_from');
     var year_to_select = document.getElementById('year_to');
     add_years_to_select(year_from_select);
@@ -14,15 +12,14 @@ function add_years() {
     year_to_select.lastChild.selected = true;
     on_year_change(year_from_select);
     on_year_change(year_to_select);
-    inflation_1.update_inflation();
+    update_inflation();
 }
-exports.add_years = add_years;
 /**
  * adds selectable years to a specific select element
  * @param {HTMLSelectElement} select element where the options should be appended
  */
 function add_years_to_select(select) {
-    for (var year in inflation_1.inflation_data) {
+    for (var year in inflation_data) {
         var option_element = document.createElement('option');
         option_element.text = year;
         select.appendChild(option_element);
@@ -32,11 +29,10 @@ function add_years_to_select(select) {
  * event listener for year change events
  * @param {Event} e
  */
-function year_change_listener(e) {
+export function year_change_listener(e) {
     var target = e.target;
     on_year_change(target);
 }
-exports.year_change_listener = year_change_listener;
 /**
  * adds month to month select if year is changed and recalculates inflation
  * @param {HTMLSelectElement} target year select element
@@ -44,18 +40,17 @@ exports.year_change_listener = year_change_listener;
 function on_year_change(target) {
     var selected_year = parseInt(target.value, 10);
     var month_select = target.parentElement.querySelector('select.month');
-    removeChildren_1.remove_children(month_select);
-    for (var month in inflation_1.inflation_data[selected_year]) {
+    remove_children(month_select);
+    for (var month in inflation_data[selected_year]) {
         var option_element = document.createElement('option');
         option_element.text = month;
         month_select.appendChild(option_element);
     }
-    inflation_1.update_inflation();
+    update_inflation();
 }
 /**
  * event listener for month change events
  */
-function month_change_listener() {
-    inflation_1.update_inflation();
+export function month_change_listener() {
+    update_inflation();
 }
-exports.month_change_listener = month_change_listener;

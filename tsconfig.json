@@ -6,11 +6,7 @@
     "noImplicitAny": true,
     "allowJs": false
   },
-  "exclude": [
-    "data",
-    "interfaces",
-    "js",
-    "node_modules",
-    "assets"
+  "files": [
+    "./bin/download_inflation_data.ts"
   ]
 }

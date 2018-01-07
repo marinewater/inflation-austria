@@ -112,9 +112,9 @@ async function write( { code, map } ) {
  */
 async function main( do_minify = true ) {
 
-    await Promise.all([
-        compile_ts( path.join( __dirname, '../' ) ),
-        compile_ts( path.join( __dirname, '../js/' ) )
+    await compile_ts( path.join( __dirname, '../' ) );
+    await compile_ts( path.join( __dirname, '../test/js/' ) );
+    await compile_ts( path.join( __dirname, '../js/' ) )
             .then( bundle )
             .then( function( result ) {
 
@@ -126,9 +126,7 @@ async function main( do_minify = true ) {
                 }
 
             })
-            .then( write ),
-        compile_ts( path.join( __dirname, '../test/js/' ) )
-    ]);
+            .then( write );
 
 }
 
