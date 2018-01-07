@@ -2,6 +2,7 @@
   "name": "inflation",
   "version": "1.0.0",
   "description": "",
+  "repository": "https://github.com/marinewater/inflation-austria",
   "main": "index.js",
   "scripts": {
     "test": "mocha --ui bdd --recursive ./test"
