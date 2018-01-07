@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const chai_1 = require("chai");
+var chai_1 = require("chai");
 require("mocha");
-const conversion_1 = require("../../js/conversion");
+var conversion_1 = require("../../js/conversion");
 describe('round', function () {
     it('should round 0 to 0', function () {
         chai_1.assert.strictEqual(conversion_1.round(0), 0);

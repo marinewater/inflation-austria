@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @returns {number}
  */
 function euro_from_getter() {
-    let euro = parseFloat(document.getElementById('euro_past').value);
+    var euro = parseFloat(document.getElementById('euro_past').value);
     if (isNaN(euro)) {
         euro = 0;
     }
@@ -17,7 +17,7 @@ exports.euro_from_getter = euro_from_getter;
  * @returns {number}
  */
 function schilling_from_getter() {
-    let schilling = parseFloat(document.getElementById('schilling_past').value);
+    var schilling = parseFloat(document.getElementById('schilling_past').value);
     if (isNaN(schilling)) {
         schilling = 0;
     }
@@ -77,8 +77,8 @@ exports.month_to_getter = month_to_getter;
  * @param {number} euro
  */
 function euro_result_setter(euro) {
-    const euro_result_element = document.getElementById('euro_present');
-    euro_result_element.textContent = `${euro.toFixed(2)}€`;
+    var euro_result_element = document.getElementById('euro_present');
+    euro_result_element.textContent = euro.toFixed(2) + "\u20AC";
 }
 exports.euro_result_setter = euro_result_setter;
 /**
@@ -86,7 +86,7 @@ exports.euro_result_setter = euro_result_setter;
  * @param {number} inflation
  */
 function inflation_result_setter(inflation) {
-    const inflation_result_element = document.getElementById('inflation_present');
-    inflation_result_element.textContent = `(${inflation.toFixed(2)}% Inflation)`;
+    var inflation_result_element = document.getElementById('inflation_present');
+    inflation_result_element.textContent = "(" + inflation.toFixed(2) + "% Inflation)";
 }
 exports.inflation_result_setter = inflation_result_setter;

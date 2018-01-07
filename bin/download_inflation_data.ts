@@ -12,8 +12,8 @@ const writeFileAsync = promisify( writeFile );
 
 class InflationData {
 
-    private html: string;
-    private inflation_data: Data;
+    private _html: string;
+    private _inflation_data: Data;
     private _month_order: string[] = [ 'Jänner', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August',
         'September', 'Oktober', 'November', 'Dezember'
     ];
@@ -40,10 +40,10 @@ class InflationData {
         const { body, statusCode } = await requestGetAsync( 'http://statistik.at/web_de/statistiken/wirtschaft/preise/verbraucherpreisindex_vpi_hvpi/zeitreihen_und_verkettungen/022815.html' );
 
         if ( statusCode !== 200 ) {
-            throw new Error( `Unable to download inflation data, website return http error ${statusCode}` );
+            throw new Error( `Unable to download inflation data, website returned http error ${statusCode}` );
         }
 
-        this.html = body.toString();
+        this._html = body.toString();
 
     }
 
@@ -53,7 +53,7 @@ class InflationData {
      */
     private _extractData() {
 
-        const $ = cheerio.load( this.html );
+        const $ = cheerio.load( this._html );
         const data: Data = {};
 
         data[ 1946 ] = {
@@ -100,7 +100,7 @@ class InflationData {
             }
         }
 
-        this.inflation_data = data;
+        this._inflation_data = data;
 
     }
 
@@ -111,7 +111,7 @@ class InflationData {
      */
     private async _saveData() {
 
-        await writeFileAsync( path.join( __dirname, '../data/inflation_data.json' ), JSON.stringify( this.inflation_data ) );
+        await writeFileAsync( path.join( __dirname, '../data/inflation_data.json' ), JSON.stringify( this._inflation_data ) );
 
     }
 
