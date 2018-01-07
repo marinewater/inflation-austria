@@ -8,11 +8,6 @@ const util_1 = require("util");
 const requestGetAsync = util_1.promisify(request.get);
 const writeFileAsync = util_1.promisify(fs_1.writeFile);
 class InflationData {
-    constructor() {
-        this._month_order = ['Jänner', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August',
-            'September', 'Oktober', 'November', 'Dezember'
-        ];
-    }
     /**
      * download and parse inflation data, then write it to disk
      * @returns {Promise<void>}

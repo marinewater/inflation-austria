@@ -14,9 +14,6 @@ class InflationData {
 
     private _html: string;
     private _inflation_data: Data;
-    private _month_order: string[] = [ 'Jänner', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August',
-        'September', 'Oktober', 'November', 'Dezember'
-    ];
 
     /**
      * download and parse inflation data, then write it to disk
