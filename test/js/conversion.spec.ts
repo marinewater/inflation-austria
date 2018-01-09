@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import 'mocha';
 
-import { round } from '../../js/conversion';
+import { round } from '../sources/js/conversion';
 
 describe( 'round', function () {
 

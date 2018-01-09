@@ -5,7 +5,7 @@
   "repository": "https://github.com/marinewater/inflation-austria",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --ui bdd --recursive ./test"
+    "test": "mocha --ui bdd --recursive ./test/js"
   },
   "author": "marinewater",
   "license": "MIT",

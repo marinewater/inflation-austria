@@ -2,8 +2,8 @@ import { assert } from 'chai';
 import 'mocha';
 import * as sinon from 'sinon';
 
-import { inflation_data, update_inflation } from '../../js/inflation';
-import * as html from '../../js/html';
+import { inflation_data, update_inflation } from '../sources/js/inflation';
+import * as html from '../sources/js/html';
 import { SinonStub } from "sinon";
 
 

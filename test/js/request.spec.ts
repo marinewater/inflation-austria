@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import 'mocha';
 import * as sinon from 'sinon';
 
-import { request } from '../../js/request';
+import { request } from '../sources/js/request';
 
 describe( 'request', function() {
 

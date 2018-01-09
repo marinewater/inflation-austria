@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var chai_1 = require("chai");
 require("mocha");
 var sinon = require("sinon");
-var request_1 = require("../../js/request");
+var request_1 = require("../sources/js/request");
 describe('request', function () {
     var xhr, requests;
     beforeEach(function () {

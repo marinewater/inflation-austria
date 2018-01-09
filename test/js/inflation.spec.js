@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var chai_1 = require("chai");
 require("mocha");
 var sinon = require("sinon");
-var inflation_1 = require("../../js/inflation");
-var html = require("../../js/html");
+var inflation_1 = require("../sources/js/inflation");
+var html = require("../sources/js/html");
 describe('inflation', function () {
     var year_from_getter, month_from_getter, year_to_getter, month_to_getter, euro_from_getter, euro_result_setter, inflation_result_setter;
     before(function () {
