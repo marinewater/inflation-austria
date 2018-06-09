@@ -11,7 +11,7 @@ export function add_years() {
     year_from_select.firstChild.selected = true;
     year_to_select.lastChild.selected = true;
     on_year_change(year_from_select);
-    on_year_change(year_to_select);
+    on_year_change(year_to_select, true);
     update_inflation();
 }
 /**
@@ -36,8 +36,10 @@ export function year_change_listener(e) {
 /**
  * adds month to month select if year is changed and recalculates inflation
  * @param {HTMLSelectElement} target year select element
+ * @param {boolean} [select_last=false]
  */
-function on_year_change(target) {
+function on_year_change(target, select_last) {
+    if (select_last === void 0) { select_last = false; }
     var selected_year = parseInt(target.value, 10);
     var month_select = target.parentElement.querySelector('select.month');
     var selected_month_name = month_select.value;
@@ -47,7 +49,7 @@ function on_year_change(target) {
         option_element.text = month;
         month_select.appendChild(option_element);
     }
-    var new_month_index = _get_month_index(selected_month_name, month_select);
+    var new_month_index = _get_month_index(selected_month_name, month_select, select_last);
     var months = month_select.querySelectorAll('option');
     months[new_month_index].selected = true;
     update_inflation();
@@ -57,14 +59,18 @@ function on_year_change(target) {
  * returns 0 if month cannot be found
  * @param {string | null} month_name
  * @param {HTMLSelectElement} month_select
+ * @param {boolean} select_last
  * @returns {number}
  * @private
  */
-function _get_month_index(month_name, month_select) {
+function _get_month_index(month_name, month_select, select_last) {
+    var months_options = month_select.querySelectorAll('option');
+    if (select_last === true) {
+        return months_options.length - 1;
+    }
     if (month_name === null) {
         return 0;
     }
-    var months_options = month_select.querySelectorAll('option');
     for (var i = 0; i < months_options.length; i++) {
         if (months_options[i].value === month_name) {
             return i;
