@@ -57,6 +57,7 @@ function on_year_change( target: HTMLSelectElement ) {
     const selected_year = parseInt( target.value, 10 );
 
     const month_select = <HTMLSelectElement>target.parentElement.querySelector( 'select.month' );
+    const selected_month_name = month_select.value;
     remove_children( month_select );
 
     for ( let month in inflation_data[ selected_year ] ) {
@@ -68,8 +69,36 @@ function on_year_change( target: HTMLSelectElement ) {
 
     }
 
+    const new_month_index = _get_month_index( selected_month_name, month_select );
+    const months = month_select.querySelectorAll( 'option' );
+    (<HTMLOptionElement>months[ new_month_index ]).selected = true;
+
     update_inflation();
 
+}
+
+/**
+ * returns index of the given month name in a list of option elements
+ * returns 0 if month cannot be found
+ * @param {string | null} month_name
+ * @param {HTMLSelectElement} month_select
+ * @returns {number}
+ * @private
+ */
+function _get_month_index( month_name: string|null, month_select: HTMLSelectElement ) {
+
+    if ( month_name === null ) {
+        return 0;
+    }
+
+    const months_options = <NodeListOf<HTMLOptionElement>>month_select.querySelectorAll( 'option' );
+    for ( let i = 0; i < months_options.length; i++ ) {
+        if ( months_options[ i ].value === month_name ) {
+            return i;
+        }
+    }
+
+    return 0;
 }
 
 /**
@@ -80,4 +109,3 @@ export function month_change_listener() {
     update_inflation();
 
 }
-
