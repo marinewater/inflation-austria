@@ -213,4 +213,9 @@ async function main( do_minify = true ) {
 
 main( true )
     .then( () => process.exit( 0 ) )
-    .catch( err => console.log( err ) );
+    .catch( function ( error ) {
+
+        console.error( error );
+        process.exit( 1 );
+
+    });
