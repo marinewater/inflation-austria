@@ -1,6 +1,6 @@
 {
   "name": "inflation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "repository": "https://github.com/marinewater/inflation-austria",
   "main": "index.js",
@@ -17,13 +17,15 @@
     "@types/request-promise": "^4.1.41",
     "@types/sinon": "^4.0.0",
     "chai": "^4.1.2",
-    "cheerio": "^1.0.0-rc.2",
     "mocha": "^4.0.1",
-    "request": "^2.87.0",
-    "request-promise": "^4.2.2",
     "rollup": "^0.51.8",
     "sinon": "^4.1.2",
     "typescript": "^2.6.1",
     "uglify-js": "^3.1.10"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
   }
 }
