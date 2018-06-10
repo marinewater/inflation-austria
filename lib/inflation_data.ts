@@ -16,12 +16,21 @@ export class InflationData {
      * download and parse inflation data, then write it to disk
      * @returns {Promise<void>}
      */
-    async start() {
+    async save() {
 
-        await this._download();
-        this._extractData();
+        await this.load();
         await this._saveData();
 
+    }
+
+    /**
+     * download and return inflation data
+     * @returns {Promise<InflationData>}
+     */
+    async load(): Promise<Data> {
+        await this._download();
+        this._extractData();
+        return this._inflation_data;
     }
 
     /**

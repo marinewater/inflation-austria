@@ -186,7 +186,7 @@ async function copy_files( files, source_directory, target_directory ) {
 }
 
 /**
- * start typescript compilation and minification
+ * save typescript compilation and minification
  * @param {boolean} [do_minify=true] set to false to skip minification
  * @returns {Promise<void>}
  */
