@@ -3,9 +3,8 @@ import { writeFile } from 'fs';
 import { InflationData as Data } from '../interfaces/inflation';
 import * as cheerio from 'cheerio';
 import * as path from 'path';
-import * as request from 'request';
+import * as request from 'request-promise';
 
-const requestGetAsync: any = promisify( request.get );
 const writeFileAsync = promisify( writeFile );
 
 export class InflationData {
@@ -32,7 +31,7 @@ export class InflationData {
      */
     private async _download() {
 
-        const { body, statusCode } = await requestGetAsync( 'http://statistik.at/web_de/statistiken/wirtschaft/preise/verbraucherpreisindex_vpi_hvpi/zeitreihen_und_verkettungen/022815.html' );
+        const { body, statusCode } = await request.get( 'http://statistik.at/web_de/statistiken/wirtschaft/preise/verbraucherpreisindex_vpi_hvpi/zeitreihen_und_verkettungen/022815.html' );
 
         if ( statusCode !== 200 ) {
             throw new Error( `Unable to download inflation data, website returned http error ${statusCode}` );
