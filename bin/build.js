@@ -47,7 +47,7 @@ function compile_ts( cwd, path_to_tsconfig = null ) {
         tsc.on( 'close', function( code ) {
 
             if ( code !== 0 ) {
-                reject( `Typescript exited with code ${code}` );
+                reject( `Typescript exited with code ${code} while compiling ${path_to_tsconfig} in ${cwd}` );
             }
             else {
                 resolve();

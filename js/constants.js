@@ -2,7 +2,4 @@
  * euro/schilling conversion rate
  * @type {number}
  */
-/**
- * euro/schilling conversion rate
- * @type {number}
- */ export var schilling_exchange_rate = 13.7603;
+export var schilling_exchange_rate = 13.7603;
