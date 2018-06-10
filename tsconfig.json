@@ -6,10 +6,11 @@
     "noImplicitAny": true,
     "allowJs": false
   },
-  "files": [
+  "include": [
+    "./lib",
     "./bin/download_inflation_data.ts"
   ],
-  "include": [
-    "./lib"
+  "exclude": [
+    "node_modules"
   ]
 }

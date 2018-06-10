@@ -1,6 +1,6 @@
 {
   "name": "inflation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "repository": "https://github.com/marinewater/inflation-austria",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "@types/chai": "^4.0.6",
     "@types/cheerio": "^0.22.5",
     "@types/mocha": "^2.2.44",
-    "@types/request": "^2.0.8",
+    "@types/request": "^2.47.0",
     "@types/request-promise": "^4.1.41",
     "@types/sinon": "^4.0.0",
     "chai": "^4.1.2",

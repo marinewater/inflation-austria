@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
     "module": "es6",
+    "moduleResolution": "node",
     "target": "es5",
     "sourceMap": false,
     "noImplicitAny": true,
-    "allowJs": false
+    "allowJs": false,
+    "lib": [
+      "es2017",
+      "DOM"
+    ]
   },
   "exclude": [
     "../node_modules"

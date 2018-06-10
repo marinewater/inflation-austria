@@ -5,7 +5,11 @@
     "sourceMap": false,
     "noImplicitAny": true,
     "allowJs": false,
-    "outDir": "../test/sources/"
+    "outDir": "../test/sources/",
+    "lib": [
+      "es2017",
+      "DOM"
+    ]
   },
   "exclude": [
     "../node_modules",
