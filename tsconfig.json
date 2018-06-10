@@ -8,5 +8,8 @@
   },
   "files": [
     "./bin/download_inflation_data.ts"
+  ],
+  "include": [
+    "./lib"
   ]
 }
