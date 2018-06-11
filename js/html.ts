@@ -111,3 +111,13 @@ export function inflation_result_setter( inflation: number ) {
     inflation_result_element.textContent = `(${inflation.toFixed( 2 )}% Inflation)`;
 
 }
+
+/**
+ * gets the language from the html documents lang attribute
+ * @returns {string}
+ */
+export function language_getter(): string {
+
+    return (<HTMLHtmlElement>document.querySelector( 'html')).getAttribute( 'lang' );
+
+}

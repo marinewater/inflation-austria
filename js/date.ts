@@ -1,5 +1,6 @@
 import { inflation_data, update_inflation } from './inflation';
 import { remove_children } from './removeChildren';
+import { translate_month } from './i18n';
 
 /**
  * adds selectable year options to all year select elements
@@ -64,7 +65,8 @@ function on_year_change( target: HTMLSelectElement, select_last = false ) {
     for ( let month in inflation_data[ selected_year ] ) {
 
         const option_element = document.createElement( 'option' );
-        option_element.text = month;
+        option_element.text = translate_month( month );
+        option_element.value = month;
 
         month_select.appendChild( option_element );
 

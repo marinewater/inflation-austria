@@ -78,3 +78,10 @@ export function inflation_result_setter(inflation) {
     var inflation_result_element = document.getElementById('inflation_present');
     inflation_result_element.textContent = "(" + inflation.toFixed(2) + "% Inflation)";
 }
+/**
+ * gets the language from the html documents lang attribute
+ * @returns {string}
+ */
+export function language_getter() {
+    return document.querySelector('html').getAttribute('lang');
+}
