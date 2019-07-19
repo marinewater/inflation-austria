@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./bin/build.js",
-    "test": "mocha --ui bdd --recursive ./test/js"
+    "test": "mocha --ui bdd -r jsdom-global/register ./test/js --recursive ./test/js"
   },
   "author": "marinewater",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "chai": "^4.1.2",
     "jsdom": "15.1.1",
     "jsdom-global": "3.0.2",
-    "mocha": "^4.0.1",
+    "mocha": "^4.1.0",
     "rollup": "^0.51.8",
     "sinon": "^4.1.2",
     "typescript": "^2.6.1",
