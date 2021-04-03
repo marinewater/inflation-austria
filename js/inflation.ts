@@ -19,7 +19,7 @@ export function get_data() {
         }
 
         inflation_data = JSON.parse( result );
-        add_years()
+        add_years();
 
     });
 

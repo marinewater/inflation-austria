@@ -1,6 +1,7 @@
 import { inflation_data, update_inflation } from './inflation';
 import { remove_children } from './removeChildren';
 import { translate_month } from './i18n';
+import { monthOrder } from './month_order';
 /**
  * adds selectable year options to all year select elements
  */
@@ -20,9 +21,11 @@ export function add_years() {
  * @param {HTMLSelectElement} select element where the options should be appended
  */
 function add_years_to_select(select) {
-    for (var year in inflation_data) {
+    var sortedYears = Object.keys(inflation_data).map(function (y) { return parseInt(y, 10); }).sort(function (a, b) { return a - b; });
+    for (var _i = 0, sortedYears_1 = sortedYears; _i < sortedYears_1.length; _i++) {
+        var year = sortedYears_1[_i];
         var option_element = document.createElement('option');
-        option_element.text = year;
+        option_element.text = year.toString(10);
         select.appendChild(option_element);
     }
 }
@@ -45,7 +48,10 @@ function on_year_change(target, select_last) {
     var month_select = target.parentElement.querySelector('select.month');
     var selected_month_name = month_select.value;
     remove_children(month_select);
-    for (var month in inflation_data[selected_year]) {
+    var sortedMonth = Object.keys(inflation_data[selected_year])
+        .sort(function (a, b) { return monthOrder[a] - monthOrder[b]; });
+    for (var _i = 0, sortedMonth_1 = sortedMonth; _i < sortedMonth_1.length; _i++) {
+        var month = sortedMonth_1[_i];
         var option_element = document.createElement('option');
         option_element.text = translate_month(month);
         option_element.value = month;

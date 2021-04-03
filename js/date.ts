@@ -1,6 +1,7 @@
 import { inflation_data, update_inflation } from './inflation';
 import { remove_children } from './removeChildren';
 import { translate_month } from './i18n';
+import { monthOrder } from './month_order';
 
 /**
  * adds selectable year options to all year select elements
@@ -27,10 +28,11 @@ export function add_years() {
  */
 function add_years_to_select( select: HTMLSelectElement ) {
 
-    for ( let year in inflation_data ) {
+    const sortedYears = Object.keys(inflation_data).map(y => parseInt(y, 10)).sort((a, b) => a-b);
+    for ( let year of sortedYears ) {
 
         const option_element = document.createElement( 'option' );
-        option_element.text = year;
+        option_element.text = year.toString(10);
 
         select.appendChild( option_element );
 
@@ -62,7 +64,9 @@ function on_year_change( target: HTMLSelectElement, select_last = false ) {
     const selected_month_name = month_select.value;
     remove_children( month_select );
 
-    for ( let month in inflation_data[ selected_year ] ) {
+    const sortedMonth = Object.keys(inflation_data[ selected_year ])
+        .sort((a, b) => monthOrder[a]-monthOrder[b]);
+    for ( let month of sortedMonth ) {
 
         const option_element = document.createElement( 'option' );
         option_element.text = translate_month( month );
