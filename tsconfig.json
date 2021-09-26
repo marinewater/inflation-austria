@@ -7,11 +7,11 @@
     "noImplicitAny": true,
     "allowJs": false,
     "lib": [
-      "es2017",
       "DOM"
     ]
   },
   "exclude": [
-    "../node_modules"
+    "./node_modules",
+    "./test"
   ]
 }

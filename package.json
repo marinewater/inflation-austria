@@ -5,23 +5,23 @@
   "repository": "https://github.com/marinewater/inflation-austria",
   "main": "index.js",
   "scripts": {
-    "build": "node ./bin/build.js",
-    "test": "mocha --ui bdd -r jsdom-global/register ./test/js --recursive ./test/js"
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "test": "TS_NODE_PROJECT=./test/tsconfig.json mocha --ui bdd --require ts-node/register ./test/*.spec.ts"
   },
   "author": "marinewater",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.0.6",
-    "@types/mocha": "^8.2.2",
-    "@types/sinon": "^4.0.0",
-    "chai": "^4.1.2",
-    "jsdom": "15.1.1",
-    "jsdom-global": "3.0.2",
-    "mocha": "^8.3.2",
-    "rollup": "^0.51.8",
-    "sinon": "^7.3.2",
-    "typescript": "^2.6.1",
-    "uglify-js": "^3.1.10"
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "rollup": "^2.57.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3",
+    "uglify-js": "^3.14.2"
   },
   "dependencies": {}
 }

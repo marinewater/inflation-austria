@@ -1,5 +1,3 @@
-import { language_getter } from './html';
-
 interface Translations {
     [language: string]: {
         month: {
@@ -45,15 +43,12 @@ const translations: Translations = {
     }
 };
 
-const language = language_getter();
-
 /**
  * returns a translation for the month name in the current language
+ * @param {string} language
  * @param {string} month
  * @returns {string}
  */
-export function translate_month( month: string ): string {
-
-    return translations[ language ].month[ month ];
-
+export function translate_month(language: string, month: string): string {
+    return translations[language].month[month];
 }
