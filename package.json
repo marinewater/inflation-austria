@@ -12,10 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.0.6",
-    "@types/cheerio": "^0.22.5",
     "@types/mocha": "^8.2.2",
-    "@types/request": "^2.47.0",
-    "@types/request-promise": "^4.1.41",
     "@types/sinon": "^4.0.0",
     "chai": "^4.1.2",
     "jsdom": "15.1.1",
@@ -26,9 +23,5 @@
     "typescript": "^2.6.1",
     "uglify-js": "^3.1.10"
   },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.2"
-  }
+  "dependencies": {}
 }
